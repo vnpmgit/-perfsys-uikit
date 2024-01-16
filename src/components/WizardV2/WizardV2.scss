@@ -1,0 +1,92 @@
+@use '../../styles/variables/colors' as *;
+@use '../../styles/variables/typography' as *;
+
+.wizardv2 {
+	&-steps {
+		display: flex;
+		width: 100%;
+	}
+
+	&-step {
+		display: flex;
+		width: 100%;
+
+		&-header {
+			display: flex;
+			// flex: 1;
+			flex-direction: column;
+			gap: 8px;
+			padding: 0 4px;
+			align-items: center;
+			white-space: nowrap;
+		}
+
+		&:first-child {
+			.wizardv2-step-header {
+				padding-left: 0;
+			}
+			
+		}
+
+		&:last-child {
+			.wizardv2-step-header {
+				padding-right: 0;
+			}
+		}
+
+		&:last-child {
+			width: fit-content;
+			
+			.wizardv2-step-line {
+				display: none;
+			}
+		}
+	}
+}
+
+.wizardv2-step-header .wizardv2-step-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.wizardv2-previews-step-icon {
+	color: $success500;
+}
+
+.wizardv2-current-step-icon {
+	-webkit-box-shadow: 0 0 0 4px $success50;
+	-moz-box-shadow: 0 0 0 4px $success50;
+	box-shadow: 0 0 0 4px $success50;
+	border-radius: 50%;
+	color: $success500;
+}
+
+.wizardv2-next-step-icon {
+	color: $gray100;
+}
+
+.wizardv2-current-step-header {
+	font-weight: $semibold;
+	color: $success700;
+}
+
+.wizardv2-previews-step-header {
+	font-weight: $semibold;
+	color: $gray700;
+}
+
+.wizardv2-next-step-header {
+	font-weight: $semibold;
+	color: $gray700;
+}
+
+.wizardv2-step-line {
+	height: 2px;
+	width: 100%;
+	margin-top: 11px;
+	background: $gray200;
+}
+
+.wizardv2-step-line-done {
+	background: $success500;
+}

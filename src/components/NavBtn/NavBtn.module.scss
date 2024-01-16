@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+
+.button {
+    position: relative;
+    color: $gray500;
+    font-weight: 600;
+    line-height: 1.7;
+    padding: 0 4px 12px 4px;
+    user-select: none;
+    cursor: pointer;
+
+    &:after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        background: $primary700;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 200ms linear;
+    }
+
+    &:hover,
+    &--active {
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &--active {
+        color: $primary700;
+    }
+
+    &--disabled {
+        color: $gray300 !important;
+
+        &:after {
+            background: $primary100 !important;
+        }
+    }
+}

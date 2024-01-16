@@ -1,0 +1,101 @@
+@import '../../styles/variables';
+
+.form-select {
+    color: $gray900;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    &--is-disabled {
+        color: $gray300;
+    }
+
+    &#{&}--default {
+        .form-select {
+            &__control {
+                min-height: 45.2px;
+                border-color: $gray300;
+                border-radius: 8px;
+                box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+
+                &:hover, &:focus {
+                    border-color: $gray300;
+                }
+
+                &--menu-is-open {
+                    border-color: $gray300;
+                }
+
+                &--is-disabled {
+                    border-color: $gray200;
+                    background: $gray50;
+
+                    .form-select__indicator-separator {
+                        background: $gray200;
+                    }
+
+                    .form-select__placeholder {
+                        color: $gray300;
+                    }
+                }
+            }
+
+            &__placeholder {
+                color: $gray600;
+                font-weight: 400;
+            }
+
+            &__indicator {
+                cursor: pointer;
+                padding: 8px 12px;
+            }
+
+            &__indicator-separator {
+                margin: 0;
+                height: 100%;
+                background: $gray300;
+            }
+
+            &__single-value {
+                margin: 0;
+                color: inherit;
+            }
+
+            &__value-container {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            &__input-container {
+                margin: 0;
+                padding: 0;
+            }
+
+            &__menu {
+                border: 1px solid $gray100;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+            }
+
+            &__option {
+                padding: 8px 12px;
+                background: #fff;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.7;
+                cursor: pointer;
+
+                &:hover {
+                    background: $gray50;
+                }
+
+                &--is-focused,
+                &--is-selected {
+                    background: $gray50;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@use '../../../styles/variables' as *;
+
+.toast-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    color: $gray600;
+
+    &__icon {
+        margin-top: 4px;
+        line-height: 0;
+    }
+
+    &__close {
+        line-height: 0;
+        color: $gray900;
+        padding: 3px;
+        float: right;
+    }
+
+    &__title {
+        color: $gray900;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.7;
+    }
+
+    &__description {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.7;
+    }
+
+    &__content {
+        flex-basis: 100%;
+        font-size: $text-sm;
+        line-height: 1.8;
+    }
+
+    &__footer {
+        flex-basis: 100%;
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    &--success {
+        color: $success600;
+
+        .toast-message {
+
+            &__icon {
+                color: $success600;
+            }
+
+            &__close {
+                color: $success500;
+            }
+
+            &__title {
+                color: $success700;
+            }
+        }
+    }
+
+    &--warning {
+        color: $warning600;
+
+        .toast-message {
+
+            &__icon {
+                color: $warning600;
+            }
+
+            &__close {
+                color: $warning500;
+            }
+
+            &__title {
+                color: $warning700;
+            }
+        }
+    }
+
+    &--error {
+        color: $error600;
+
+        .toast-message {
+
+            &__icon {
+                color: $error600;
+            }
+
+            &__close {
+                color: $error500;
+            }
+
+            &__title {
+                color: $error700;
+            }
+        }
+    }
+}

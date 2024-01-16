@@ -1,0 +1,48 @@
+@use '../../styles/variables' as *;
+
+:root {
+  --toastify-toast-width: 400px;
+  --toastify-font-family: Inter, sans-serif;
+}
+
+.toast-container {
+  &.Toastify__toast-container--top-center,
+  &.Toastify__toast-container--bottom-center {
+    width: 100%;
+    max-width: 1216px;
+  }
+
+  .Toastify__toast {
+    box-shadow: none;
+    border-radius: 12px;
+    border: 1px solid $gray300;
+    padding: 16px;
+
+    &-body {
+      padding: 0;
+    }
+
+    &--info {
+      color: $gray600;
+      background: $gray25;
+    }
+
+    &--success {
+      color: $success700;
+      background: $success25;
+      border: 1px solid $success300;
+    }
+
+    &--warning {
+      color: $warning700;
+      background: $warning25;
+      border: 1px solid $warning300;
+    }
+
+    &--error {
+      color: $error700;
+      background: $error25;
+      border: 1px solid $error300;
+    }
+  }
+}

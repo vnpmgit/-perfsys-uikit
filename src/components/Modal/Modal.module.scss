@@ -1,0 +1,128 @@
+@import '../../styles/variables';
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    visibility: hidden;
+
+    &--active {
+        visibility: visible;
+    }
+}
+
+.modal {
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow: hidden;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 8px -4px rgba(16, 24, 40, 0.03), 0px 20px 24px -4px rgba(16, 24, 40, 0.08);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 11;
+
+    &--sm {
+        max-width: 40vw;
+        height: 40vh;
+    }
+
+    &--md {
+        max-width: 50vw;
+        height: 60vh;
+    }
+
+    &--lg {
+        max-width: 70vw;
+        height: 80vh;
+    }
+
+    &__header {
+        padding-bottom: 20px;
+    }
+
+    &__body {
+        overflow-x: auto;
+        flex-grow: 1;
+    }
+
+    &__footer {
+        padding-top: 20px;
+    }
+
+    &__close {
+        float: right;
+        margin-top: -10px;
+        margin-right: -10px;
+
+        &:disabled {
+            color: $gray300;
+        }
+    }
+}
+
+.custom-header {
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+.icon {
+    display: inline-flex;
+    margin-bottom: 16px;
+}
+
+.title {
+    color: $gray900;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.arrow-title{
+    color: $gray900;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.message {
+    color: $gray600;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-top: 4px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+
+    :global {
+        .button + .button {
+            margin-left: 12px;
+        }
+    }
+}
+
+[data-theme='dark'] {
+    .content {
+        background: $black;
+    }
+}
+
+:global .modal-open {
+    overflow: hidden;
+}

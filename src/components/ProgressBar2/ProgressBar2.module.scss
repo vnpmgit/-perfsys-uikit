@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+
+.wrapper {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.filler {
+    height: 100%;
+    transition: width 4s ease-in-out;
+    border-radius: inherit;
+    width: 0;
+}
+
+.wrapper {
+    &--success .filler {
+        background: $success500;
+    }
+
+    &--primary .filler {
+        background: $primary600;
+    }
+}
+
+.filler-container {
+    height: 8px;
+    border-radius: 4px;
+    background: $gray200;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.label {
+    color: $gray700;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+    padding-left: 20px;
+}

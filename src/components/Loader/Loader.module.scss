@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+.global {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background: $gray50;
+
+    .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.wrapper {
+    text-align: center;
+
+    &.center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.loader {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+
+    &:before {
+        z-index: 100;
+        animation: spin 1s infinite;
+    }
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top-color: $success500;
+    }
+
+    &:after {
+        border: 8px solid $gray100;
+    }
+}
+
+
+.text {
+    margin-top: 20px;
+    color: $gray700;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

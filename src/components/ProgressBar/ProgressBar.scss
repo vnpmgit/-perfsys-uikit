@@ -1,0 +1,26 @@
+@use "../../styles/variables" as *;
+
+.progress-bar {
+    background: $white;
+	font-family: Inter;
+	border-radius: 4px;
+	border: 2px solid $gray900;
+}
+
+.filler {
+    height: 100%;
+    background-color: $primary600;
+    transition: width 1s ease-in-out;
+    border-radius: inherit;
+    text-align: right;
+    width: 0;
+}
+
+.label {
+	display: block;
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 700;
+    padding:  4px 5px;
+    color: $gray900;
+}

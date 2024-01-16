@@ -1,0 +1,62 @@
+@use "../../styles/variables" as *;
+
+@mixin regular-colors($text-color, $bg-color, $border-color: null) {
+    color: $text-color;
+    background: $bg-color;
+
+    &.badge--double {
+        @if $border-color != null {
+            border-color: $border-color;
+        }
+    }
+}
+
+.badge {
+    display: flex;
+
+    &--round {
+        border-radius: 50%;
+    }
+
+    &--double {
+        border: 6px solid transparent;
+    }
+
+    &--regular {
+        padding: 6px;
+
+        &.badge--gray {
+            @include regular-colors($gray600, $gray100, $gray50);
+        }
+
+        &.badge--primary {
+            @include regular-colors($primary600, $primary100, $primary50);
+        }
+
+        &.badge--error {
+            @include regular-colors($error600, $error100, $error50);
+        }
+
+        &.badge--warning {
+            @include regular-colors($warning600, $warning100, $warning50);
+        }
+
+        &.badge--success {
+            @include regular-colors($success600, $success100, $success50);
+        }
+    }
+
+    &--outline {
+        color: $gray700;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid $gray200;
+        background: #FFF;
+        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+
+        > svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

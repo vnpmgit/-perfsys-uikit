@@ -1,0 +1,10 @@
+@use 'sass:meta';
+@use 'variables';
+@import 'common';
+
+:root {
+    @each $name, $value in meta.module-variables("variables") {
+        --#{$name}: #{$value};
+    }
+}
+

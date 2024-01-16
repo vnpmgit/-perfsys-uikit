@@ -1,0 +1,32 @@
+.button-group {
+    .button {
+        position: relative;
+        z-index: 1;
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+
+        &:disabled {
+            z-index: 0;
+        }
+
+        &:hover:not(:disabled) {
+            z-index: 2;
+        }
+    }
+
+    .button-outline + .button-outline {
+        margin-left: -1px;
+    }
+}
